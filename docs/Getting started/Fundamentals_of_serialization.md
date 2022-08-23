@@ -66,4 +66,4 @@ Do you store the value of the reference variable itself? Nope, that won't work, 
 
 What you really want, to preserve references, is some kind of object-ID system that lets you find the referenced object in a way that does not depend on the memory layout of the application. This is one of the more trickier parts of serialization that Persyst can help with.
 
-In the next chapters, we will talk about what information can be serialized with Persyst, and wether it is serialized as values or references. Also, for the particularly bold, we will discuss some ways to extend the system so you can reference ***anything***.
+In the next chapters, we will talk about what information can be serialized with Persyst, and wether it is serialized as values or references. Also, for the particularly bold, we will discuss some ways to extend the system so you can [reference anything](/Know_more/Referencing_everything).

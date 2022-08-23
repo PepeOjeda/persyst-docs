@@ -2,6 +2,7 @@
   "label": "I want to know more!",
   "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Not-so-quickly learn the not-so-basics."
   }
 }

@@ -8,7 +8,7 @@ Mostly, using Persyst consists on annotating scripts to tell the [PersistentObje
 
 ### ISaveable
 
-You can mark any MonoBehaviour as saveable by implementing the `ISaveable` interface, like so:
+You can mark any class as saveable by implementing the `ISaveable` interface, like so:
 
 ```
 using Persyst;
@@ -27,7 +27,7 @@ The interface does not contain any methods that you need to implement. It's just
   </div>
 </details>
 
-This is absolutely required for `MonoBehaviours`, but objects of a class that does not inherit from `UnityEngine.Object` can still be serialized even if not tagged as `ISaveable`, so long as they are members of a saveable `MonoBehaviour`. [Next chapter](Serializable_data) will explain this in more detail.
+This interface is absolutely required for `MonoBehaviours`, but objects of a class that does not inherit from `UnityEngine.Object` can still be serialized even if not tagged as `ISaveable`, so long as they are members of a saveable `MonoBehaviour`. See [this page](/Know_more/Nesting_classes) for a detailed explanation of the rules.
 
 
 ### The \[SaveThis\] Attribute

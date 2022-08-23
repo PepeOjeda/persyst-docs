@@ -10,7 +10,7 @@ const config = {
   tagline: 'Serialization plugin for Unity',
   url: 'https://pepeojeda.github.io/',
   baseUrl: '/persyst-docs/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.ico',
   trailingSlash: false,
