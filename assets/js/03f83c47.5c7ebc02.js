@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1929],{4325:s=>{s.exports=JSON.parse('{"label":"hello","permalink":"/persyst-docs/blog/tags/hello","allTagsPath":"/persyst-docs/blog/tags","count":2}')}}]);
