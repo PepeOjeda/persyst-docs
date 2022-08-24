@@ -11,7 +11,7 @@ In order to enable `Persyst` serialization, you must add a [UIDManager](/) and a
 
 ![GameSaver and UIDManager components added to a GameObject](./img/Manager_components.PNG)
 
-If your game can have multiple scenes loaded at the same time, I recommend placing the `GameObject` with the manager classes in a separate scene that is always kept open. If your game only has one scene open at a time, you can get away with having a separate object in each scene, although it is still recommended to have a separate scene for the managers and just swap the other ones out with additive loading, for reasons discussed [here](serializing_references).
+If your game can have multiple scenes loaded at the same time, I recommend placing the `GameObject` with the manager classes in a separate scene that is always kept open. If your game only has one scene open at a time, you can get away with having a separate object in each scene, although it is still recommended to have a separate scene for the managers and just swap the other scenes out with additive loading, for reasons discussed [here](serializing_references).
 
 ![Multiple scenes loaded at the same time. The Managers object is in its own scene, alone](./img/multi-scene.PNG)
 

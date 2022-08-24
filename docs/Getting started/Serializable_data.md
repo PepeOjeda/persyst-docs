@@ -6,12 +6,6 @@ sidebar_position: 5
 
 We will now talk about the types of data that can be serialized with Persyst, and whether they are [serialized as values or references](Fundamentals_of_serialization).
 
-:::note
-Please keep in mind that the point of Persyst is to serialize *runtime* data. It does not ***replace*** Unity's built-in serialization. In fact, it handles an entirely separate task that Unity's serialization simply does not do. What that means is that some of the limitations we are about to discuss are way less important than they might initially seem. 
-
-For example, not being able to serialize a reference to an AudioClip with Persyst is fairly irrelevant, as you are probably going to be assigning that reference in the Unity Editor, and using Unity's serialization for that.
-:::
-
 All primitive datatypes (`int`, `string`, `bool`) are serializable with Persyst, and will be serialized as **values**.
 
 References to `GameObjects`, `Components`, and `Scriptable Objects`can be serialized, and will be serialized as **references**. See [serializing references](serializing_references) for details. 
@@ -23,7 +17,13 @@ Collections can be serialized, but they are kind of [a long story](/Know_more/Co
 
 You can serialize any instance `Fields`. You can also serialize `Properties`, as long as they have both a `getter` and a `setter`. Visibility (`public`, `private`, etc.) is irrelevant. 
 
-There is currently no way to serialize `static` members. Sorry. This might change in the future, but for now , depending on what you are using the static members for, you might be able to get around this by using a [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) instead to hold information that needs to be accesible from multiple instances. Although "best practices" people seem to hate singletons now for some reason, so you be the judge.
+There is currently no way to serialize `static` members. Sorry. This might change in the future.
+
+:::note
+Keep in mind that the point of Persyst is to serialize *runtime* data. It does not ***replace*** Unity's built-in serialization. In fact, it handles an entirely separate task that Unity's serialization simply does not do. What that means is that some of these limitations are way less important than they might initially seem. 
+
+For example, not being able to serialize a reference to an AudioClip with Persyst is fairly irrelevant, as you are probably going to be assigning that reference in the Unity Editor, and using Unity's serialization for that.
+:::
 
 :::tip
 You can serialize the same member with both Persyst and the Unity serialization system, and that will work just fine. In fact, this is a very common thing to do. 
@@ -44,7 +44,7 @@ But here's the thing. You actually **can** store it. Because the question of *wh
 
 Take this property, as an example:
 
-```
+```cs
 [SaveThis] Vector3 position{
     get{return transform.position;}
     set{transform.position = value;}
@@ -68,4 +68,4 @@ Hopefully you can see that this is not because of some special quirk of `Transfo
 ...
 
 
-And how about serializing members of other `Components` that can only be `set` privately? Well... few things are impossible if you are [really bold](/Know_more/Abusing_reflection).
+And how about serializing members of other `Components` that can only be `set` privately? Well... few things are impossible if you are [really bold](/Know_more/using_reflection).

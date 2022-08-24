@@ -20,7 +20,7 @@ Now, if we ignore [static](https://docs.microsoft.com/en-us/dotnet/csharp/langua
 
 Fields and Properties have a [type](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/), and depending on the type, they are either [values](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types) or [references](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types). A value-type variable just contains the information itself. For example, let's take an `int`:
 
-```
+```cs
 int i = 3;
 ```
 
@@ -28,7 +28,7 @@ If you were to look at the actual memory of the computer, you would find that th
 
 Reference-type variables, on the other hand, don't actually hold the information itself, but rather a... well, a reference to it. That means the information is stored somewhere else, and all the variable contains is the directions on how to find it. This is basically the same concept as [pointers](https://en.wikipedia.org/wiki/Pointer_(computer_programming)), except the conversions between addresses and values all happen implicitly (more convenient to use, and also a bit more opaque to the user, which can be confusing if you are just starting out). For example:
 
-```
+```cs
 public class A{
     //....
 }
@@ -38,14 +38,14 @@ A a = new A();
 
 In this case, the variable `a` is not the information itself (an instance of the class `A`), but only a reference to it. You can think of this as an address, or an arrow pointing to it, or whatever you like. A very important implication of this is that, with reference types, you can have multiple variables that all share the same information.
 
-```
+```cs
 A a = new A();
 A anotherA = a;
 ```
 
 Now, there is **only one** instance of `A`, but we have two references to it. If we use one of the references to modify the object (like `a.modify()`), accessing the object through the other reference will show the changes as well, because it's the same object. On the contrary, for a value type:
 
-```
+```cs
 int i = 3;
 int j = i;
 ```

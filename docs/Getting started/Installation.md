@@ -18,7 +18,7 @@ Find it [here](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json
 
 ### NaughtyAttributes
 
-Available [here](https://github.com/dbrizov/NaughtyAttributes). Used to make some buttons in the inspector. Feel free to edit the files and change remove the attributes if for some reason you don't want to install NaughtyAttributes, as none the buttons are technically required (although they are quite convenient). 
+Available [here](https://github.com/dbrizov/NaughtyAttributes). Used to make some buttons in the inspector. Feel free to edit the files and remove the attributes if for some reason you don't want to install NaughtyAttributes, as none the buttons are technically required (although they are quite convenient). 
 
 ## Installing Persyst itself
 

@@ -13,18 +13,18 @@ Persyst makes creating a real save system much more convenient. By using Reflect
 
 For example, if you wanted to save an integer value in a MonoBehaviour, this is all the code you would need to write:
 
-```
+```cs
 using Persyst;
 
 public class SerializableMB : MonoBehaviour, ISaveable
 {
-    [SaveThis] int value;
+    [SaveThis] int someValue;
 }
 ```
 
 Easy, isn't it?
 
-The basic usage is designed to require ***no coding experience at all***. If you want some more advanced features in your save system, there are many ways to easily build upon the fundamentals with a small amount of code. Section [I want to know more!](/category/i-want-to-know-more) includes some examples of how to implement commonly wanted features that require a little more involvement. 
+The basic usage is designed to require ***no coding experience at all***. If you want some more advanced features in your save system, there are many ways to easily build upon the fundamentals with a small amount of code. Section [Extending Persyt](/category/extending-persyst) includes some examples of how to implement commonly wanted features that require a little more involvement. 
 
 ### Formats, encryption?
 
@@ -37,3 +37,10 @@ You might expect me to say "of course!", but there is actually a little more to 
 Even though I believe this project is a very useful resource that many people can greatly benefit from, I must say that if you are working on a very serious or very large project, there are better alternatives. For example, [EasySave](https://docs.moodkie.com/product/easy-save-3/). 
 
 Why ever use this one, then? **Cause it's free, baby**.
+
+
+### How to learn?
+
+This website contains an extensive (maybe too extensive?) discussion of everything I believe you need to learn. But, of course, it might still be a bit confusing to be lectured about these things here, in a web browser. So, the Persyst repo has an "Examples" folder, with some unity scenes and some scripts that you can use to test things yourself by clicking buttons and changing code. It's fun! Kind of. 
+
+Each example folder has a readme file with more explanations, so you actually know what you are doing. I would recommend reading the "Getting Started" section here first, but everyone has their own learning process, so what do I know. 

@@ -69,9 +69,12 @@ const config = {
         ],
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require('prism-react-renderer/themes/vsDark'),
+        additionalLanguages: ['csharp']
       },
+      colorMode:{
+        defaultMode: 'dark'
+      }
     }),
 };
 

@@ -10,7 +10,7 @@ Beyond the same [basics](script_annotation) that apply to serializing everything
 
 If you have a `MonoBehaviour` like this:
 
-```
+```cs
 public class MyData : MonoBehaviour, ISaveable
 {
     [SaveThis] GameObject otherGO;
@@ -19,7 +19,7 @@ public class MyData : MonoBehaviour, ISaveable
 
 In order for the reference to be properly serialized, you need to add a `PersistentObject` to **both** this object and the referenced one. This is required because only objects with a `PersistentObject` component have a UID, and UIDs are [how references are serialized](Fundamentals_of_serialization). This also applies to referencing a `Component`, like this:
 
-```
+```cs
 public class MyData : MonoBehaviour, ISaveable
 {
     [SaveThis] Transform otherTransform;
@@ -39,7 +39,7 @@ Wait... the only ones?
 
 You can reference `ScriptableObjects` too! But wait, a `ScriptableObject` can't have `Components`... so how does it get a UID? Well, like this:
 
-```
+```cs
 public class SO : SerializableScriptableObject{ 
 }
 ```

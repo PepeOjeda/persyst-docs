@@ -10,7 +10,7 @@ Mostly, using Persyst consists on annotating scripts to tell the [PersistentObje
 
 You can mark any class as saveable by implementing the `ISaveable` interface, like so:
 
-```
+```cs
 using Persyst;
 
 public class SerializableMB : MonoBehaviour, ISaveable
@@ -27,14 +27,35 @@ The interface does not contain any methods that you need to implement. It's just
   </div>
 </details>
 
-This interface is absolutely required for `MonoBehaviours`, but objects of a class that does not inherit from `UnityEngine.Object` can still be serialized even if not tagged as `ISaveable`, so long as they are members of a saveable `MonoBehaviour`. See [this page](/Know_more/Nesting_classes) for a detailed explanation of the rules.
+This interface is absolutely required for `MonoBehaviours`, but objects that are nested inside a `MonoBehaviour` can still be serialized even if their class is not tagged as `ISaveable`, although with some restrictions.
+
+```cs
+using Persyst;
+
+public class SerializableMB : MonoBehaviour, ISaveable
+{
+  //both of these will be serialized
+  [SaveThis] AnISaveableClass isaveableField;
+  [SaveThis] NotISaveable nonIsaveableField; 
+}
+
+public class AnISaveableClass : ISaveable{
+  //...
+}
+
+public class NotISaveable{
+  //...
+}
+```
+
+See [Nesting classes](/Know_more/Nesting_classes) for a detailed explanation of the rules.
 
 
 ### The \[SaveThis\] Attribute
 
-Inside of an `ISaveable` `MonoBehaviour`, you can mark any field (and [most properties](Serializable_data)) to be serialized with the attribute `[SaveThis]`. The `PersistentObject` component attached to this `GameObject` will take it from there.
+Inside of an `ISaveable` class, you can mark any field (and [most properties](Serializable_data)) to be serialized with the attribute `[SaveThis]`. The `PersistentObject` component attached to this `GameObject` will take it from there.
 
-```
+```cs
 using Persyst;
 
 public class SerializableMB : MonoBehaviour, ISaveable
@@ -43,3 +64,5 @@ public class SerializableMB : MonoBehaviour, ISaveable
     [SaveThis] GameObject someReference;
 }
 ```
+
+`[SaveThis]` only really does something if it is inside of an `ISaveable` class. Again, see [Nesting classes](/Know_more/Nesting_classes) for more details on this.
