@@ -27,7 +27,24 @@ The interface does not contain any methods that you need to implement. It's just
   </div>
 </details>
 
-This interface is absolutely required for `MonoBehaviours`, but objects that are nested inside a `MonoBehaviour` can still be serialized even if their class is not tagged as `ISaveable`, although with some restrictions.
+
+### The \[SaveThis\] Attribute
+
+Inside of an `ISaveable` class, you can mark any field (and [most properties](Serializable_data)) to be serialized with the attribute `[SaveThis]`. The `PersistentObject` component attached to this `GameObject` will take it from there.
+
+```cs
+using Persyst;
+
+public class SerializableMB : MonoBehaviour, ISaveable
+{
+    [SaveThis] int someValue;
+    [SaveThis] GameObject someReference;
+}
+```
+
+### Serializing classes that are not `ISaveable`
+
+This interface is absolutely required for `MonoBehaviours`, but objects that are nested inside a `MonoBehaviour` can still be serialized even if their class is not tagged as `ISaveable`.
 
 ```cs
 using Persyst;
@@ -48,21 +65,8 @@ public class NotISaveable{
 }
 ```
 
-See [Nesting classes](/Know_more/Nesting_classes) for a detailed explanation of the rules.
+However, there are some restriction as to how the fields inside of `NotISaveable` will be serialized. `[SaveThis]` only really does something if it is inside of an `ISaveable` class. See [Nesting classes](/Tutorial/Know_more/Nesting_classes) and [Inheritance](/Tutorial/Know_more/inheritance) for more details on this.
 
-
-### The \[SaveThis\] Attribute
-
-Inside of an `ISaveable` class, you can mark any field (and [most properties](Serializable_data)) to be serialized with the attribute `[SaveThis]`. The `PersistentObject` component attached to this `GameObject` will take it from there.
-
-```cs
-using Persyst;
-
-public class SerializableMB : MonoBehaviour, ISaveable
-{
-    [SaveThis] int someValue;
-    [SaveThis] GameObject someReference;
-}
-```
-
-`[SaveThis]` only really does something if it is inside of an `ISaveable` class. Again, see [Nesting classes](/Know_more/Nesting_classes) for more details on this.
+:::tip
+In general, I would recommend that **every** user-defined class that needs to be serialized implements `ISaveable`. It will make your life easier.
+:::

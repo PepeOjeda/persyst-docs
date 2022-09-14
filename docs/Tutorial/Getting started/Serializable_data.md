@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # What can be serialized?
@@ -11,9 +11,9 @@ All primitive datatypes (`int`, `string`, `bool`) are serializable with Persyst,
 References to `GameObjects`, `Components`, and `Scriptable Objects`can be serialized, and will be serialized as **references**. See [serializing references](serializing_references) for details. 
 Other `UnityEngine.Objects` (e.g. `AudioClip`) are currently not supported. 
 
-Instances of objects that do not inherit from `UnityEngine.Object` can be serialized, but only as **values**. Unless you are willing to put in [some extra work](/Know_more/Referencing_everything).
+Instances of objects that do not inherit from `UnityEngine.Object` can be serialized, but only as **values**. Unless you are willing to put in [some extra work](/docs/Tutorial/Extending_persyst/Referencing_everything.md).
 
-Collections can be serialized, but they are kind of [a long story](/Know_more/Collections).
+Collections can be serialized, but they are kind of [a long story](/Tutorial/Know_more/Collections).
 
 You can serialize any instance `Fields`. You can also serialize `Properties`, as long as they have both a `getter` and a `setter`. Visibility (`public`, `private`, etc.) is irrelevant. 
 
@@ -68,4 +68,4 @@ Hopefully you can see that this is not because of some special quirk of `Transfo
 ...
 
 
-And how about serializing members of other `Components` that can only be `set` privately? Well... few things are impossible if you are [really bold](/Know_more/using_reflection).
+And how about serializing members of other `Components` that can only be `set` privately? Well... few things are impossible if you are [really bold](/Tutorial/Know_more/using_reflection).

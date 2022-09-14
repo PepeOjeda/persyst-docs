@@ -1,4 +1,7 @@
 ---
+title: Persyst, runtime serialization in Unity
+description: Introduction to Persyst.
+keywords: [Unity, persistence, serialization, Persyst, save game]
 sidebar_position: 1
 slug: /
 ---
@@ -41,6 +44,6 @@ Why ever use this one, then? **Cause it's free, baby**.
 
 ### How to learn?
 
-This website contains an extensive (maybe too extensive?) discussion of everything I believe you need to learn. But, of course, it might still be a bit confusing to be lectured about these things here, in a web browser. So, the Persyst repo has an "Examples" folder, with some unity scenes and some scripts that you can use to test things yourself by clicking buttons and changing code. It's fun! Kind of. 
+This website contains an extensive (maybe too extensive?) discussion of everything I believe you need to learn. But, of course, it might still be a bit confusing to be lectured about these things here, in a web browser. So, [the Persyst repo](https://github.com/PepeOjeda/Persyst) has an "Examples" folder, with some unity scenes and some scripts that you can use to test things yourself by clicking buttons and changing code. It's fun! Kind of. 
 
 Each example folder has a readme file with more explanations, so you actually know what you are doing. I would recommend reading the "Getting Started" section here first, but everyone has their own learning process, so what do I know. 

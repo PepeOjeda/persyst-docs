@@ -14,7 +14,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.ico',
   trailingSlash: false,
-
+  
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'PepeOjeda', // Usually your GitHub org/user name.
@@ -44,25 +44,30 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
         title: 'Persyst',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Persyst logo',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'Tutorial/intro',
             position: 'left',
             label: 'Tutorial',
           },
           {
-            href: 'https://github.com/',
+            type: 'doc',
+            docId: 'API/PersistentObject',
+            position: 'left',
+            label: 'API',
+          },
+          {
+            href: 'https://github.com/PepeOjeda/Persyst',
             label: 'GitHub',
             position: 'right',
           },
@@ -74,7 +79,8 @@ const config = {
       },
       colorMode:{
         defaultMode: 'dark'
-      }
+      },
+      metadata: [{name: 'keywords', content: 'Unity, persistence, serialization, Persyst, save game'}],
     }),
 };
 

@@ -1,5 +1,6 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
+keywords: [Unity, serialize references, SerializeReference]
 ---
 
 # Serializing references
@@ -56,4 +57,4 @@ That's mainly why the [one-manager-in-its-own-scene](scene_setup) setup is prefe
 
 ## References inside a nested class
 
-See [Nesting classes](/Know_more/Nesting_classes). The TL;DR is this works as long as all the classes in the chain are marked as ISaveable.
+See [Nesting classes](/Tutorial/Know_more/Nesting_classes). The TL;DR is this works as long as all the classes in the chain are marked as ISaveable.

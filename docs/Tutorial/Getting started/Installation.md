@@ -22,6 +22,6 @@ Available [here](https://github.com/dbrizov/NaughtyAttributes). Used to make som
 
 ## Installing Persyst itself
 
-Once that's done, installing Persyst is as easy as dragging the '*scripts*' folder into your Unity project's '*Assets*' folder. 
+Once that's done, installing [Persyst](https://github.com/PepeOjeda/Persyst) is as easy as dragging the '*scripts*' folder into your Unity project's '*Assets*' folder. 
 
 Yup. That's it.
